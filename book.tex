@@ -1,0 +1,45 @@
+\documentclass[a5paper,10pt,pagesize,DIV=classic]{scrbook}
+\usepackage[pass]{geometry}
+
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[russian]{babel}
+
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Учебник по математике}
+\author{Роман Добровенский\\ \\heller@heller.ru\\http://heller.ru}
+\date{2012, Москва}
+\maketitle
+
+\tableofcontents
+
+\input{introduction}
+
+\chapter{Логика}
+Первая глава дает несколько неформальное описание основных законов логики. Главная цель этой главы дать какую-то интуицию об излагаемых понятиях и о принципах логических выводов, прежде чем мы все это формализуем и используем в конце второй главы. Если вам не особо интересны основания математики, то вы можете сразу переходить к середине третьей главы и читать более прикладные вещи, обращаясь сюда по необходимости как к справочнику.
+
+Наиболее важными являются первый и четвертый параграфы. Остальные вези уже имеют более факультативный характер. Если у вас будут проблемы с пониманием первых параграфов, попробуйте сразу решать упражнения в конце.
+
+\input{logic-basics}
+\input{logic-functions}
+\input{logic-puzzle}
+\input{logic-predicates}
+\input{logic-theories}
+\input{logic-semantics}
+\input{logic-paradoxes}
+\input{logic-applications}
+
+
+\chapter{Множества}
+В этой главе очень формально и кратко будут изложены основные понятия множеств. Запомнить и понять сходу всё что здесь написано очень сложно, поэтому лучшей стратегией будет поверхностно ознакомиться с содержимым главы, а затем возвращаться к ней по мере необходимости как к справочному материалу.
+
+\input{sets-basics}
+\input{sets-relations}
+
+
+\end{document}
