@@ -1,0 +1,8 @@
+*~
+*.log
+book.aux
+book.out
+book.pdf
+book.synctex.gz
+book.toc
+
