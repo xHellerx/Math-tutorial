@@ -1,10 +1,39 @@
 \documentclass[a5paper,10pt,pagesize,DIV=classic]{scrbook}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
 \usepackage[pass]{geometry}
 
 \usepackage{graphicx}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[russian]{babel}
+\usepackage[english,russian]{babel}
+
+\usepackage{calc}
+
+\usepackage[raggedright,small]{titlesec}
+\usepackage[dotinlabels]{titletoc}
+
+%\titlelabel{\thetitle.\quad\thispagestyle{fancy}}
+
+\usepackage{ccaption}
+\captiondelim{. }
+
+\usepackage[bookmarks=false, a4paper, colorlinks, unicode, pdfstartview=FitH, pdftex]{hyperref}
+\hypersetup{
+plainpages=true,
+linkcolor=blue,
+citecolor=red,
+menucolor=blue,
+pdfnewwindow=true
+}
+
+\clubpenalty=10000
+\widowpenalty=10000
+
+\lccode`\-=`\-
+\lccode`\+=`\+
+\defaulthyphenchar=127
+\hfuzz=1.5pt
 
 \usepackage{amssymb}
 \usepackage{amsthm}
