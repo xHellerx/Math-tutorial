@@ -45,6 +45,27 @@
 Логические операции удобно наглядно изображать с помощью так называемых кругов Эйлера. Пример, который я только что привел, может быть графически изображен следующим образом:
 
 \includegraphics{sets-union.png}
+\begin{figure}
+\centering
+\def\seta{(-1,0) circle (2)}
+\def\setb{(1,0) circle (2)}
+\begin{tikzpicture}
+     \tikzstyle{element}=[minimum size=1mm, font=\large]
+    \draw [fill=red]   \seta;
+    \draw [fill=yellow]\setb;
+    \begin{scope}[even odd rule]
+        \clip \seta;
+        \fill[fill=orange] \setb;
+    \end{scope}
+    \draw \seta;
+    \draw \setb;
+    \foreach \t/\x/\y in { z/-3/-2, x/3/-2, y/3/2, a/-2/0, b/-.1/1, c/.3/0, d/-.2/-1,
+    e/2/.5, f/1.5/-.5 }
+        \node[element] (\t) at (\x,\y) {$\t$};
+\end{tikzpicture}
+\caption{Пересечение двух множеств}
+\end{figure}
+
 
 Здесь $x$, $y$ и $z$ — это просто некоторые элементы, которые не вошли ни в одно из множеств. Всегда при работе со множествами (да и вообще всегда) важно рассматривать не только объекты, с которыми мы непосредственно работаем, но и внешние факторы. Красным цветом обозначено объединение двух множеств, представляемых кругами.
 
