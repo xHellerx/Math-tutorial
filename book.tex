@@ -39,6 +39,17 @@ pdfnewwindow=true
 \usepackage{amsthm}
 \usepackage{hyperref}
 
+
+%% use this instead of slhape or textit for inline definitions %%
+\newcommand{\term}[1]{{\slshape #1}}
+
+%% definition for theorems %%
+\newtheorem{thm}{Теорема}[chapter]
+
+%% itemize use dashes instead of bullets%%
+\def\labelitemi{--}
+
+
 \begin{document}
 
 \title{Учебник по математике}
