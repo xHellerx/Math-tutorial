@@ -12,6 +12,8 @@
 
 Определение логической связки «И» можно резюмировать следующей таблицей:
 
+\begin{table}[h]
+\centering
 \begin{tabular}{c c | c}
 $a$ & $b$ & $a \land b$ \\
 \hline
@@ -20,6 +22,8 @@ $a$ & $b$ & $a \land b$ \\
 1 & 0 & 0 \\
 1 & 1 & 1
 \end{tabular}
+\caption{Определение логической связки <<И>>}\label{table:logic-and}
+\end{table}
 
 
 Подобные таблицы называются таблицами истинности, и они по сути представляют собой таблицы, в которых перечислены все возможные логические значения интересующих нас высказываний и результат применения к ним логической связки. Что-то вроде школьной таблицы умножения, только для логических операций.
@@ -36,6 +40,8 @@ $a$ & $b$ & $a \land b$ \\
 
 Всё сказанное, возможно, станет более понятно, когда мы выразим все операции одной таблицей истинности:
 
+\begin{table}[h]
+\centering
 \begin{tabular}{cc|cccccc}
 $a$ & $b$ & $a\land b$ & $a\lor b$ & $a\oplus b$ & $a\leftrightarrow b$ & $\neg a$ & $a \to b$\\
 \hline
@@ -44,6 +50,8 @@ $a$ & $b$ & $a\land b$ & $a\lor b$ & $a\oplus b$ & $a\leftrightarrow b$ & $\neg 
 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1
 \end{tabular}
+\caption{Сводная таблица истинности логических операций}
+\end{table}
 
 Обратите внимание на то, что фраза «на улице идёт дождь или много машин» не особо хорошо определена~--- непонятно, имеется ли ввиду «или то, или другое» (исключающее или), или же «и то, и другое». В математике эти два смысла строго разграничены операциями $\lor$ и $\oplus$.
 
@@ -53,19 +61,19 @@ $a$ & $b$ & $a\land b$ & $a\lor b$ & $a\oplus b$ & $a\leftrightarrow b$ & $\neg 
 
 Используя перечисленные операции, можно задавать и довольно сложные высказывания, например, что-то вроде такого:
 $$
-((a \lor b) \leftrightarrow (c \land a)) \oplus b
+((a \lor b) \leftrightarrow (c \land a)) \oplus b.
 $$
 
 Круглыми скобками мы обозначаем порядок, в котором выполняются операции. Если для каждого из высказываний $a$, $b$ и $c$ определить, истинно оно или ложно, то по таблице истинности можно определить, истинно ли все высказывание.
 
 Пусть, например, $a$ истинно, а $b$ и $c$ ложны. Тогда, подставив вместо этих высказываний $1$ и $0$ в приведённую формулу и воспользовавшись правилами из таблицы истинности, можно установить истинность и всего высказывания:
 $$
-((1 \lor 0) \leftrightarrow (0 \land 1)) \oplus 0 = (1 \leftrightarrow 0) \oplus 0 = 0 \oplus 0 = 0
+((1 \lor 0) \leftrightarrow (0 \land 1)) \oplus 0 = (1 \leftrightarrow 0) \oplus 0 = 0 \oplus 0 = 0.
 $$
 
 В итоге наше высказывание оказалось ложно при данных значениях истинности для $a$, $b$ и $c$. Если же, например, все три высказывания будут ложными, то все высказывание окажется истинным:
 $$
-((0 \lor 0) \leftrightarrow (0 \land 0)) \oplus 0 = (0 \leftrightarrow 0) \oplus 0 = 1 \oplus 0 = 1
+((0 \lor 0) \leftrightarrow (0 \land 0)) \oplus 0 = (0 \leftrightarrow 0) \oplus 0 = 1 \oplus 0 = 1.
 $$
 
 Приведенные примеры уже больше напоминают какую-то скорее безумную арифметику с двумя цифрами, нежели логику, и наделить каким-то бытовым смыслом приведённые формулы, кажется, уже сложно, но подобные примеры необходимы для того, чтобы понять, как вообще со всеми этими понятиями работать. Позже мы будем рассматривать более осмысленные примеры, пока же мы слишком мало знаем и привести что-то осмысленное сложно.
@@ -75,65 +83,58 @@ $$
 \begin{thm} Для логических операций справедливы следующие законы:
 
 \subparagraph{Ассоциативность:}
-
 \begin{enumerate}
-\item $(a \land b) \land c = a \land (b \land c)$
-\item $(a \lor b) \lor c = a \lor (b \lor c)$
-\item $(a \oplus b) \oplus c = a \oplus (b \oplus c)$
+\item $(a \land b) \land c = a \land (b \land c)$,
+\item $(a \lor b) \lor c = a \lor (b \lor c)$,
+\item $(a \oplus b) \oplus c = a \oplus (b \oplus c)$.
 \end{enumerate}
 
 \subparagraph{Коммутативность:}
-
 \begin{enumerate}
-\item $a \land b = b \land a$
-\item $a \lor b = b \lor a$
-\item $a \oplus b = b \oplus a$
-\item $a \leftrightarrow b = b \leftrightarrow a$
+\item $a \land b = b \land a$,
+\item $a \lor b = b \lor a$,
+\item $a \oplus b = b \oplus a$,
+\item $a \leftrightarrow b = b \leftrightarrow a$.
 \end{enumerate}
 
 \subparagraph{Дистрибутивность:}
-
 \begin{enumerate}
-\item $a \land (b \lor c) = (a \land b) \lor (a \land c)$
-\item $a \lor (b \land c) = (a \lor b) \land (a \lor c)$
-\item $a \land (b \oplus c) = (a \land b) \oplus (a \land c)$
+\item $a \land (b \lor c) = (a \land b) \lor (a \land c)$,
+\item $a \lor (b \land c) = (a \lor b) \land (a \lor c)a$,
+\item $a \land (b \oplus c) = (a \land b) \oplus (a \land c)$.
 \end{enumerate}
 
 \subparagraph{Двойное отрицание:}
-
 \begin{enumerate}
-\item $\neg\neg a = a$
+\item $\neg\neg a = a$.
 \end{enumerate}
 
 \subparagraph{Законы де Моргана:}
-
 \begin{enumerate}
-\item $\neg (a \land b) = (\neg a) \lor (\neg b)$
-\item $\neg (a \lor b) = (\neg a) \land (\neg b)$
+\item $\neg (a \land b) = (\neg a) \lor (\neg b)$,
+\item $\neg (a \lor b) = (\neg a) \land (\neg b)$.
 \end{enumerate}
 
 \subparagraph{Ещё по мелочам:}
-
 \begin{enumerate}
-\item $a \land 1 = a$
-\item $a \land 0 = 0$
-\item $a \lor 1 = 1$
-\item $a \lor 0 = a$
-\item $a \oplus 0 = a$
-\item $a \oplus 1 = \neg a$
-\item $\neg (a \oplus b) = (a \leftrightarrow b)$
-\item $a \land \neg a = 0$
-\item $a \lor \neg a = 1$
-\item $a \oplus \neg a = 1$
-\item $a\land a = a$
-\item $a \lor a = a$
-\item $a \oplus a = a$
-\item $a \land (\neg a \lor b) = a \land b$
-\item $a \lor (\neg a \land b) = a \lor b$
+\item $a \land 1 = a$,
+\item $a \land 0 = 0$,
+\item $a \lor 1 = 1$,
+\item $a \lor 0 = a$,
+\item $a \oplus 0 = a$,
+\item $a \oplus 1 = \neg a$,
+\item $\neg (a \oplus b) = (a \leftrightarrow b)$,
+\item $a \land \neg a = 0$,
+\item $a \lor \neg a = 1$,
+\item $a \oplus \neg a = 1$,
+\item $a\land a = a$,
+\item $a \lor a = a$,
+\item $a \oplus a = a$,
+\item $a \land (\neg a \lor b) = a \land b$,
+\item $a \lor (\neg a \land b) = a \lor b$.
 \end{enumerate}
 
 \subparagraph{Для импликации:}
-
 \begin{enumerate}
 \item $a \rightarrow b = b \vee \neg a$
 \item $\neg(a \rightarrow b) = a \wedge \neg b$
@@ -147,20 +148,19 @@ $$
 \end{thm}
 
 \begin{proof}
-
 Каждую из формул я доказывать не буду, поскольку все они доказываются аналогично и я настоятельно рекомендую провести доказательство самостоятельно. Я лишь продемонстрирую на отдельных примерах, как это делается.
 
 Подходов тут существует три:
-
 \begin{itemize}
 \item Интуитивный. Ассоциативность и коммутативность операций «И» и «ИЛИ» на самом деле очевидна. Вообще, конечно, говорить «очевидно» в математике мы не имеем права, поскольку очевидное часто оказывается неверным и наоборот. Однако в подобных совсем уж тривиальных случаях строго доказывать каждую теорему будет утомительно. Если утверждение теоремы у вас не вызывает сомнения, и вы знаете, как его можно строго проверить~--- можно и не париться.
 \item Выводить одно из другого, применяя к начальной формуле другие сформулированные нами формулы. Например, вот как можно вывести последнюю формулу в нашем списке, воспользовавшись дистрибутивностью:
 $$
-a \lor (\neg a \land b) = (a \lor \neg a) \land (a \lor b) = 1 \land (a \lor b) = a \lor b
+a \lor (\neg a \land b) = (a \lor \neg a) \land (a \lor b) = 1 \land (a \lor b) = a \lor b.
 $$
 
 \item Самый тупой и простой способ~--- просто перебрать все возможные варианты, построив таблицу истинности. Для примера докажем таким образом закон дистрибутивности:
-
+\begin{table}[h]
+\centering
 \begin{tabular}{ccc|cc|ccc}
 $a$&$b$&$c$&$b\lor c$&$a\land(b\lor c)$&$a\land b$&$a\land c$&$(a\land b)\lor(a\land c)$\\
 \hline
@@ -173,6 +173,8 @@ $a$&$b$&$c$&$b\lor c$&$a\land(b\lor c)$&$a\land b$&$a\land c$&$(a\land b)\lor(a\
 1&1&0&1&1&1&0&1\\
 1&1&1&1&1&1&1&1
 \end{tabular}
+\caption{Доказательство дистрибутивности логических операций}
+\end{table}
 
 Собственно, что и требовалось доказать.
 \end{itemize}
@@ -189,38 +191,38 @@ $$
 
 Закон коммутативности же означает, что нам не важен порядок участвующих в выражении высказываний. В совокупности с ассоциативностью, это говорит также, что мало того, что мы можем опускать скобки, мы ещё и порядок можем путать:
 $$
-(a \lor (b \lor c)) \lor d = b \lor d \lor c \lor a
+(a \lor (b \lor c)) \lor d = b \lor d \lor c \lor a.
 $$
 
 На фоне этого может оказаться странным поведение эквиваленции. Как легко убедиться, если построить таблицу истинности, операция эквивалентности тоже является ассоциативной:
 $$
-(a \leftrightarrow b) \leftrightarrow c = a \leftrightarrow (b \leftrightarrow c)
+(a \leftrightarrow b) \leftrightarrow c = a \leftrightarrow (b \leftrightarrow c).
 $$
 
 Тем не менее, если мы будем применять её в таком виде, опустив круглые скобки, то результат может оказаться неожиданным:
 $$
-(1 \leftrightarrow 0 \leftrightarrow 0) = ((1 \leftrightarrow 0) \leftrightarrow 0) = (0 \leftrightarrow 0) = 1
+(1 \leftrightarrow 0 \leftrightarrow 0) = ((1 \leftrightarrow 0) \leftrightarrow 0) = (0 \leftrightarrow 0) = 1.
 $$
 
 Это несколько противоречит интуитивному представлению о понятии «эквивалентность». Нам хотелось бы иметь возможность писать $a \leftrightarrow b \leftrightarrow c$ и ожидать, что данное высказывание будет истинным лишь в том случае, когда все три высказывания либо одновременно истинны, либо одновременно ложны. Это было бы логично.
 
 В математике так и поступают. Если в последовательных операциях эквивалентности не указываются скобки, то имеется в виду следующее:
 $$
-a \leftrightarrow b \leftrightarrow c = (a \leftrightarrow b) \land (b \leftrightarrow c)
+a \leftrightarrow b \leftrightarrow c = (a \leftrightarrow b) \land (b \leftrightarrow c).
 $$
 
 Именно по этой причине закон ассоциативности для эквивалентности обычно не рассматривается. Такая странность возникает из-за некоторой неточности привычного человеческого языка, когда мы, произнося одни и те же слова, можем иногда подразумевать довольно разные логические операции. Это во многом сродни неточности слова «или»: из-за этого нам пришлось разграничивать операции $\lor$ и $\oplus$. Здесь нет никакого парадокса или противоречия~--- это просто надо иметь в виду.
 
 Также замечания заслуживает закон де Моргана. Он на самом деле обобщается на любое количество высказываний. Для примера продемонстрируем простейшую ситуацию:
 $$
-\neg(a \lor b \lor c) = \neg(a \lor (b \lor c)) = \neg a \land \neg (b \lor c) = \neg a \land \neg b \land \neg c
+\neg(a \lor b \lor c) = \neg(a \lor (b \lor c)) = \neg a \land \neg (b \lor c) = \neg a \land \neg b \land \neg c.
 $$
 
 Аналогично можно распространить этот закон на любое количество высказываний (даже бесконечное). Как это сделать строго математически, мы обсудим в дальнейшем в нашем курсе, пока же можно просто попробовать развить какую-то интуицию относительно этого закона.
 
 Пусть высказывание $a$ означает, что Тане нравятся бритые мальчики, а высказывание $b$ означает, что Тане нравятся мальчики в спортивных штанах. Предположим, однако, что Таня не дура какая-нибудь, и для неё верно высказывание:
 $$
-\neg(a \land b) = \mbox{«Тане не нравятся бритые мальчики в спортштанах»}
+\neg(a \land b) = \text{«Тане не нравятся бритые мальчики в спортштанах»}
 $$
 
 (На всякий случай сообщу, что автор текста сам бреется налысо и имеет в гардеробе зауженные спортштаны.)
