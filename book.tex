@@ -44,8 +44,12 @@ pdfnewwindow=true
 %% use this instead of slhape or textit for inline definitions %%
 \newcommand{\term}[1]{{\slshape #1}}
 
-%% definition for theorems %%
+%% definition for theorems, excercies, etc. %%
+\theoremstyle{plain}
 \newtheorem{thm}{Теорема}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Упражнение}[chapter]
 
 %% itemize use dashes instead of bullets%%
 \def\labelitemi{--}
