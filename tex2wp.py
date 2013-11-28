@@ -1,7 +1,6 @@
 import re
 
 # Todo:
-# end-of-proof sign
 # corollary environment
 
 def convert(filename):
@@ -17,7 +16,7 @@ def convert(filename):
                 line = re.sub(r"\\S", "&sect;", line)
                 line = re.sub(r"\\end\{exercise\}", "", line)
                 line = re.sub(r"\\end\{thm\}", "", line)
-                line = re.sub(r"\\end\{proof\}", "", line)
+                line = re.sub(r"\\end\{proof\}", "$$\square$$", line)
                 line = re.sub(r"\\end\{example\}", "", line)
                 line = re.sub(r"\\end\{definition\}", "", line)
                 line = re.sub(r"\\term\{(.+?)\}", "<i>\g<1></i>", line)
