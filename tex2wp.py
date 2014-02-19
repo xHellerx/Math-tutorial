@@ -20,6 +20,10 @@ def convert(filename):
                 line = re.sub(r"\\end\{example\}", "", line)
                 line = re.sub(r"\\end\{definition\}", "", line)
                 line = re.sub(r"\\term\{(.+?)\}", "<i>\g<1></i>", line)
+
+                line = re.sub(r"\\sstirling\{(.+?)\}\{(.+?)\}",
+                              r"\\genfrac{\\{}{\\}}{0pt}{}{\1}{\2}",
+                              line)
                 
                 oldlen = len(line)
                 line = re.sub(r"\\begin\{exercise\}",
