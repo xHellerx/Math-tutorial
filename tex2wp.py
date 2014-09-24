@@ -5,7 +5,7 @@ import re
 
 def convert(filename):
     with open(filename, encoding="utf-8") as src:
-        with open("out.txt", "w") as dst:
+        with open("out.txt", "w", encoding="utf-8") as dst:
             for line in src:
                 line = re.sub(r"~", "&nbsp;", line)
                 line = re.sub(r"---", "&mdash;", line)
